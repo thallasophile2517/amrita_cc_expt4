@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="indexStyle.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/popstyle.css"> -->
+</head>
+<body>
+    <div method="POST">
+        <h1>Student Registration Form</h1> <!--target="end.html" action="end.html"-->
+        <form   method="POST" accept-charset="UTF-8"  id="studentForm" name="Registration_Form">
+            <!--<fieldset>
+                <legend>Personal Details:</legend>-->
+            <table>
+                
+                <tr>
+                    <th>
+                        <label>Enter Your Student ID:</label>
+                    </th>
+                    <td>
+                        <input type="number" id="SId" name="SId" placeholder="Student ID" size="20" required min="100" max="500" step="5">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Enter Your  First Name:</label>
+                    </th>
+                    <td>
+                        <input type="text" id="fname" name="fname" placeholder="First Name" autofocus maxlength="15" required autocomplete="name">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Enter Your  Last Name:</label>
+                    </th>
+                    <td>
+                        <input type="text" id="lname" name="lname" placeholder="Last name"  maxlength="15" required autocomplete="name">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Enter Your Date Of Birth:</label>
+                    </th>
+                    <td>
+                        <input type="date" id="date" name="date"  >
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Enter Your Gender:</label>
+                    </th>
+                    <td>
+                        <select id="gender" name="gender" size="1">
+                            <option selected>Female</option>
+                            <option>Male</option>
+                        </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    
+                <tr>
+                    <th>
+                        <label>Enter Your Mobile Number:</label>
+                    </th>
+                    <td>
+                        <input type="tel" id="no" name="no" size="30" pattern="[7-9]{1}[0-9]{4}[0-9]{5}" placeholder="Mobile Number(Start between 7-9)" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Enter Your  Email ID:</label>
+                    </th>
+                    <td>
+                        <input type="email" name="email" id="email" placeholder="Email ID" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Enter Your Address:</label>
+                    </th>
+                    <td>
+                        <textarea id="textarea" name="textarea" rows="5" cols="25" placeholder="Address"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="country">Choose Your Country:</label>
+                    </th>
+                    <td>
+                        <select id="Countryname" name="countryname" size="1">
+                            <option selected>Africa</option>
+                            <option>British</option>
+                            <option>China</option>
+                            <option>Dubai</option>
+                            <option>Europe</option>
+                            <option>France</option>
+                            <option>India</option>
+                            <option>Japna</option>
+                            <option>Portugal</option>
+                            <option>Russia</option>
+                            <option>United Kingdom</option>
+                            <option>United States Of America</option>
+                        </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Submission Date of Form:</label>
+                    </th>
+                    <td>
+                        <input type="date" id="Sdate" name="Sdate"  >
+                        
+                    </td>
+                </tr>
+           
+            <tr >
+                <td style=" text-align: center;"><br><br>
+
+                    <div class="popup center">
+                        <div class="icon">
+                          <!-- <i class="fa fa-check"></i> -->
+                          <img src="ck.png" width="100px" height="100px">
+                        </div>
+                        <div class="title">
+                          Success!!
+                        </div>
+                        <div class="description">
+                          You are now registered!
+                        </div>
+                        <div class="dismiss-btn">
+                          <a href="https://studentregistration21-b5d6b.web.app/"><button id="dismiss-popup-btn">
+                            Dismiss
+                          </button></a>
+                        </div>
+                      </div>
+
+
+                    
+                    <button id="sbtn"  style="background-color: rgba(46, 255, 46, 0.884);" type="submit" name="submit" value="SUBMIT">SUBMIT</button>
+                    
+                </td>
+                <td >
+                    <br><br>
+                    <button style="background-color: rgba(18, 14, 250, 0.884);" type="reset" name="reset" value="RESET">RESET</button>
+                </td>
+    
+                
+            </tr>
+            </table>
+        <!--</fieldset>-->
+        </form>
+    </div>
+
+    <!--<script src="/__/firebase/8.4.2/firebase-database.js"></script>-->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyB9oW6Xul5ifDjW5BfgFiUT24ijDlQ6vJA",
+    authDomain: "studentregistration21-b5d6b.firebaseapp.com",
+    databaseURL: "https://studentregistration21-b5d6b-default-rtdb.firebaseio.com",
+    projectId: "studentregistration21-b5d6b",
+    storageBucket: "studentregistration21-b5d6b.appspot.com",
+    messagingSenderId: "336612338720",
+    appId: "1:336612338720:web:c8435a673c53fb5bb66045",
+    measurementId: "G-CTZ2MYR46Q"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+<script src="fn.js"></script>
+<!-- <script src="popfn.js"></script> -->
+
+<!--
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyB9oW6Xul5ifDjW5BfgFiUT24ijDlQ6vJA",
+    authDomain: "studentregistration21-b5d6b.firebaseapp.com",
+    databaseURL: "https://studentregistration21-b5d6b-default-rtdb.firebaseio.com",
+    projectId: "studentregistration21-b5d6b",
+    storageBucket: "studentregistration21-b5d6b.appspot.com",
+    messagingSenderId: "336612338720",
+    appId: "1:336612338720:web:c8435a673c53fb5bb66045",
+    measurementId: "G-CTZ2MYR46Q"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+//ref msg
+var messagesRef= firebase.database().ref('messages');
+
+//form
+document.getElementById('studentForm').addEventListener('submit', submitForm);
+
+function submitForm(e){
+    e.preventDefault();
+
+    var SId= getInputVal('SId');
+    var fname= getInputVal('fname');
+    var lname= getInputVal('lname');
+    var date= getInputVal('date');
+    var gender= getInputVal('gender');
+    var no= getInputVal('no');
+    var email= getInputVal('email');
+    var textarea= getInputVal('textarea');
+    var Countryname= getInputVal('Countryname');
+    var Sdate= getInputVal('Sdate');
+
+    //console.log(fname);
+    saveMessage(SId,fname,lname,date,gender,no,email,textarea,Countryname,Sdate);
+
+
+
+
+}
+
+function getInputVal(id){
+    return document.getElementById(id).value;
+}
+
+//save msg
+function saveMessage(SId,fname,lname,date,gender,no,email,textarea,Countryname,Sdate){
+    var newMessageRef= messagesRef.push();
+    newMessageRef.set({
+        STUDENT_ID :SId.value,
+        first_name: fname.value,
+        last_name: lname.value,
+        date: date.value,
+        Gender: gender.value,
+        phNO: no.value,
+        email: email.value,
+        Adress: textarea.value,
+        Countryname: Countryname.value,
+        Sub_date: Sdate.value
+
+    });
+
+}
+
+</script>
+--->
+</body>
+</html>
